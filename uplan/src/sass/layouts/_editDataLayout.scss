@@ -1,0 +1,30 @@
+$editHeaderHeight:56px;
+$editDataSidebarWidth:310px;
+.edit-data-wrapper {
+    height: 100%;
+    padding: $editHeaderHeight 0 0 $editDataSidebarWidth;
+    .edit-header {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: $editHeaderHeight;
+        z-index: 9;
+    }
+    .edit-data-main {
+        height: 100%;
+        position: relative;
+        .edit-data {
+            height: 100%;
+        }
+    }
+    .edit-data-sidebar {
+        width: $editDataSidebarWidth;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        padding-top: $editHeaderHeight;
+        z-index: 8;
+    }
+}

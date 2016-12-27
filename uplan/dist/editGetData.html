@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>首页</title>
+    <!-- 公共 -->
+    <meta charset="UTF-8">
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" name="viewport" id="viewport" />
+<meta name="renderer" content="webkit">
+<link rel="stylesheet" href="css/uplan.min.css">
+<link rel="stylesheet" href="css/style.min.css">
+<script src="js/jquery.min.js"></script>
+<script src="js/uplan.min.js"></script>
+<script src="plugIn/nicescroll/jquery.nicescroll.min.js"></script>
+<script type="text/javascript" src="plugIn/ztree/jquery.ztree.core.min.js"></script>
+<script src="js/common.min.js"></script>
+<!--[if (gte IE 6)&(lte IE 8)]>
+  <script type="text/javascript" src="[JS library]"></script>
+  <script type="text/javascript" src="plugIn/ie8/selectivizr.min.js"></script>
+  <noscript><link rel="stylesheet" href="[fallback css]" /></noscript>
+  <script type="text/javascript" src="plugIn/ie8/html5shiv.min.js"></script>
+  <script type="text/javascript" src="plugIn/ie8/respond.min.js"></script>
+<![endif]-->
+
+    <!-- 公共end -->
+
+</head>
+
+<body>
+    <div class="up-container-full edit edit-data-wrapper">
+        <div class="edit-header">
+            <div class="fl">
+                <h3><i class="icon-u-home"></i>添加数据</h3></div>
+            <div class="fr">
+                <i class="icon-u-home"></i>
+            </div>
+        </div>
+        <!-- 侧栏 -->
+        <div class="edit-data-sidebar">
+    <div class="edit-data-sidebar-header">
+        <h5>模板列表</h5>
+ 
+    </div>
+    <div class="edit-data-sidebar-list">
+        <div class="edit-data-sidebar-tree">
+            <ul id="example-tree1" class="ztree-sidebar"></ul>
+        </div>
+    </div>
+</div>
+
+
+
+   
+        <script>
+        var setting = {
+            diySetting: {
+                accordion: false
+            },
+            diyClass: {
+                nodeDir: "icon-gr-folder",
+                nodeOpenDir: "icon-gr-wenjianjia",
+            }
+        };
+        var zNodes = [{
+            name: '9月成绩表',
+            open: true,
+            extend: "<a class='ztree-right-icon icon-gr-sandianshu'></a>",
+            children: [{
+                name: '产品表',
+            }, {
+                name: '产品表',
+            }, {
+                name: '产品表',
+            }, {
+                name: '产品表',
+            }, {
+                name: '产品表',
+            }, {
+                name: '类型表',
+            }]
+        }, {
+            name: '市场行情调查',
+            children: [{
+                name: '产品表',
+            }, {
+                name: '类型表',
+            }]
+        }];
+
+        $("#example-tree1").ztreeSidebar(zNodes, setting);
+        </script>
+        <!-- 侧栏 end -->
+        <div class="edit-data-main">
+   
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+(function() {
+
+
+
+}());
+</script>
+
+</html>

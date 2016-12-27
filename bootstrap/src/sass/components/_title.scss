@@ -1,0 +1,29 @@
+.title{
+    height: 42px;
+    border-bottom: 1px solid $bc;
+    background: #f5f8fa; 
+    padding: 0 15px;
+    >h4{
+        color: $fcs;
+        font-size: 14px;
+        padding-left: 10px;
+        border-left: 2px solid $cp;
+        margin-top: 14px;
+        float: left;
+        font-weight: bold;
+    }
+    .title-right{
+        float: right;
+
+        >.btn{
+            margin-top: 10px;
+            margin-left: 10px;
+        }
+        >.btn-link{
+            color: $fcs;
+            i{
+                color: $cp;
+            }
+        }
+    }
+}

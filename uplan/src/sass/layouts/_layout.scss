@@ -1,0 +1,48 @@
+html,
+body {
+    height: 100%;
+    background: $bg;
+    color: $fc;
+    font-size: $fz;
+    font-family: "Microsoft YaHei";
+}
+
+.wrapper {
+    height: 100%;
+    width: 100%;
+    padding: $headerHeight 0 0 $sidebarWidth;
+
+}
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9;
+    width: 100%;
+}
+.sidebar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 8;
+    width: $sidebarWidth;
+    padding-top: $headerHeight;
+}
+.content { 
+    height: 100%;
+    .title {
+        height: 42px;
+        background: #fff;
+        border-bottom: 1px solid $bc;
+        width: 100%;
+    }
+
+    .main{
+        height: 100%;
+        padding:16px;
+        position: relative;
+    }
+    .title+.main{
+        height: calc(100% - 42px);
+    }
+}

@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>首页</title>
+    <!-- 公共 -->
+    <meta charset="UTF-8">
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" name="viewport" id="viewport" />
+<meta name="renderer" content="webkit">
+<link rel="stylesheet" href="css/uplan.min.css">
+<link rel="stylesheet" href="css/style.min.css">
+<script src="js/jquery.min.js"></script>
+<script src="js/uplan.min.js"></script>
+<script src="plugIn/nicescroll/jquery.nicescroll.min.js"></script>
+<script type="text/javascript" src="plugIn/ztree/jquery.ztree.core.min.js"></script>
+<script src="js/common.min.js"></script>
+<!--[if (gte IE 6)&(lte IE 8)]>
+  <script type="text/javascript" src="[JS library]"></script>
+  <script type="text/javascript" src="plugIn/ie8/selectivizr.min.js"></script>
+  <noscript><link rel="stylesheet" href="[fallback css]" /></noscript>
+  <script type="text/javascript" src="plugIn/ie8/html5shiv.min.js"></script>
+  <script type="text/javascript" src="plugIn/ie8/respond.min.js"></script>
+<![endif]-->
+
+    <!-- 公共end -->
+    <script src="js/echarts.min.js"></script>
+    <script src="plugIn/jqGrid/jqGrid.min.js"></script>
+    <script src="js/allchart.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="plugIn/handsontable/handsontable.full.min.css">
+    <script src="plugIn/handsontable/handsontable.full.min.js"></script>
+</head>
+
+<body>
+    <div class="up-container-full wrapper">
+        <!-- 头部 -->
+        <div class="header">
+    <nav class="up-navbar up-navbar-default">
+        <div class="up-container-fluid">
+            <div class="up-navbar-header">
+                <button type="button" class="up-navbar-toggle up-collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+                </button>
+                <a class="up-navbar-brand" href="javascript:void(0);"><img src="images/logo.png"></a>
+            </div>
+            <div class="up-collapse up-navbar-collapse" id="navbar-collapse">
+                <ul class="up-nav up-navbar-nav">
+                    <li class="up-active"><a href="index.html"><i class="icon-gr-Home"></i>首页 </a></li>
+                    <li><a href="dataSource.html"><i class="icon-gr-rds-16"></i>数据源</a></li>
+                    <li><a href="production.html"><i class="icon-gr-wodeziyuan"></i>作品</a></li>
+                    <li><a href="templet.html"><i class="icon-gr-moban"></i>模板</a></li>
+                </ul>
+                <ul class="up-nav up-navbar-nav up-navbar-right">
+                    <li>
+                        <div class="header-nav-form">
+                            <input type="text" name="">
+                            <i class="icon-u-search"></i>
+                        </div>
+                    </li>
+                    <li class="up-dropdown">
+                        <a href="javascript:void(0);" class="up-dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="header-portrait"><img src="images/touxiang.png"></span>小王二<span class="up-caret"></span></a>
+                        <ul class="up-dropdown-menu" role="menu">
+                            <li><a href="javascript:void(0);">个人中心</a></li>
+                            <li><a href="javascript:void(0);">我的消息</a></li>
+                            <li class="up-divider"></li>
+                            <li><a href="javascript:void(0);" >退出</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="javascript:void(0);" class="header-logout"><i class="icon-gr-tuichu"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+
+        <!-- 头部 end -->
+        <!-- 侧栏 -->
+        <div class="sidebar">
+    <div class="sidebar-header">
+        <h5>模板列表</h5>
+        <a href=""><i class="icon-gr-jiahao"></i></a>
+    </div>
+    <div class="sidebar-list">
+        <div class="sidebar-tree">
+            <ul id="example-tree1" class="ztree-sidebar"></ul>
+        </div>
+    </div>
+</div>
+
+
+
+   
+        <script>
+        var setting = {
+            diySetting: {
+                accordion: false
+            },
+            diyClass: {
+                nodeDir: "icon-gr-folder",
+                nodeOpenDir: "icon-gr-wenjianjia",
+            }
+        };
+        var zNodes = [{
+            name: '成绩单',
+            open: true,
+            extend: "<a class='ztree-right-icon icon-gr-sandianshu'></a>",
+            children: [{
+                name: '产品表',
+                active: true
+            }, {
+                name: '类型表',
+            }]
+        }, {
+            name: '成绩单',
+            open: true,
+            children: [{
+                name: '产品表',
+            }, {
+                name: '类型表',
+            }]
+        }, {
+            name: '成绩单',
+            open: true,
+            children: [{
+                name: '产品表',
+            }, {
+                name: '类型表',
+            }]
+        }];
+
+        $("#example-tree1").ztreeSidebar(zNodes, setting);
+        </script>
+        <!-- 侧栏 end -->
+        <div class="content">
+            <div class="title">
+                <h4>学生成绩表9月 <small>上传时间</small></h4>
+                <div class="title-right">
+                    <button class="up-btn up-btn-warning up-btn-xs"><i class="icon-gr-chart"></i>创建图标</button>
+                    <button class="up-btn up-btn-link up-btn-xs"><i class="icon-gr-bianji"></i>编辑数据</button>
+                    <button class="up-btn up-btn-link up-btn-xs"><i class="icon-gr-arrow121112"></i>上传数据</button>
+                </div>
+            </div>
+            <div class="main">
+                <div class="dataSource-data">
+                    <div class="tab-nav tab-nav-multi  tab-nav-line ">
+                        <ul class="tab-nav-body">
+                            <li class="active" data-tab="#example-tab1">表格</li>
+                            <li data-tab="#example-tab2">excel表</li>
+                            <li data-tab="#example-tab3">菜单三</li>
+                            <li data-tab="#example-tab4">菜单四</li>
+                        </ul>
+                    </div>
+                    <div class="tabs-wrapper margin-top20">
+                        <div class="tab-body active" id="example-tab1">
+                            <table id="grid" class="jqgrid"></table>
+                        </div>
+                        <div class="tab-body" id="example-tab2">
+                      
+                                <div id="example-handson"></div>
+                      
+                        </div>
+                    </div>
+                </div>
+                <div class="dataSource-sidebar">
+                    <ul class="tab-nav dataSource-sidebar-nav">
+                        <li class="active" data-tab="#example-tab11">关联的图标</li>
+                        <li data-tab="#example-tab12">关联的作品</li>
+                    </ul>
+                    <div class="tab-wrapper">
+                        <div class="tab-body scroll active dataSource-sidebar-list" id="example-tab11">
+                            <div class="up-panel">
+                                <div class="up-panel-heading">
+                                    <h3 class="up-panel-title">文理选课情况</h3>
+                                </div>
+                                <div class="up-panel-body">
+                                    <div class="demochart" id="demochart1"></div>
+                                </div>
+                            </div>
+                            <div class="up-panel">
+                                <div class="up-panel-heading">
+                                    <h3 class="up-panel-title">文理选课情况</h3>
+                                </div>
+                                <div class="up-panel-body">
+                                    <div class="demochart" id="demochart2"></div>
+                                </div>
+                            </div>
+                            <div class="up-panel">
+                                <div class="up-panel-heading">
+                                    <h3 class="up-panel-title">文理选课情况</h3>
+                                </div>
+                                <div class="up-panel-body">
+                                    <div class="demochart" id="demochart3"></div>
+                                </div>
+                            </div>
+                            <div class="up-panel">
+                                <div class="up-panel-heading">
+                                    <h3 class="up-panel-title">文理选课情况</h3>
+                                </div>
+                                <div class="up-panel-body">
+                                    <div class="demochart" id="demochart4"></div>
+                                </div>
+                            </div>
+                            <div class="up-panel">
+                                <div class="up-panel-heading">
+                                    <h3 class="up-panel-title">文理选课情况</h3>
+                                </div>
+                                <div class="up-panel-body">
+                                    <div class="demochart" id="demochart5"></div>
+                                </div>
+                            </div>
+                            <div class="up-panel">
+                                <div class="up-panel-heading">
+                                    <h3 class="up-panel-title">文理选课情况</h3>
+                                </div>
+                                <div class="up-panel-body">
+                                    <div class="demochart" id="demochart6"></div>
+                                </div>
+                            </div>
+                            <div class="up-panel">
+                                <div class="up-panel-heading">
+                                    <h3 class="up-panel-title">文理选课情况</h3>
+                                </div>
+                                <div class="up-panel-body">
+                                    <div class="demochart" id="demochart7"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-body scroll dataSource-sidebar-list" id="example-tab12">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+$("#grid").jqGrid({
+    url: 'http://trirand.com/blog/phpjqgrid/examples/jsonp/getjsonp.php?callback=?&qwery=longorders',
+    mtype: "GET",
+    datatype: "jsonp",
+    colModel: [{
+        label: 'OrderID',
+        name: 'OrderID',
+        key: true,
+        width: 75
+    }, {
+        label: 'Customer ID',
+        name: 'CustomerID',
+        width: 150
+    }, {
+        label: 'Order Date',
+        name: 'OrderDate',
+        width: 150
+    }, {
+        label: 'Freight',
+        name: 'Freight',
+        width: 150
+    }, {
+        label: 'Ship Name',
+        name: 'ShipName',
+        width: 150
+    }],
+    page: 1,
+    autowidth: true,
+    height: $(".main").height() - 90,
+    viewrecords: true,
+    pager: "#gridPager2",
+});
+
+
+
+
+(function() {
+    var data = function() {
+        return Handsontable.helper.createSpreadsheetData(100, 20);
+    };
+
+
+
+    var container = document.getElementById('example-handson');
+
+    new Handsontable(container, {
+        data: data(),
+        height: $(".main").height() - 90,
+        minSpareCols: 1,
+        minSpareRows: 1,
+        rowHeaders: true,
+        colHeaders: true,
+        contextMenu: true
+    });
+}())
+</script>
+
+</html>

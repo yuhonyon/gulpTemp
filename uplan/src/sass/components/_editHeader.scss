@@ -1,0 +1,23 @@
+.edit-header{
+    background: #f5f8fa;
+    padding: 0 15px;
+    box-shadow:0 -1px  5px 1px rgba(0,0,0,.1);
+    h3{
+        font-size: 16px;
+        line-height: 55px;
+        font-weight: bold;
+        color: $fcs;
+        i{
+            font-size: 20px;
+            position: relative;
+            top: 2px;
+            
+        }
+    }
+    .up-btn{
+        margin-top: 12px;
+        padding-left: 20px;
+        padding-right: 20px;
+        background: transparent;
+    }
+}

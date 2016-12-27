@@ -1,0 +1,24 @@
+.fr{
+	float: right!important;
+}
+
+.fl{
+	float: left!important;
+}
+
+.clearfix{
+	@include clearfix();
+}
+
+
+$direction:top right bottom left;
+@for $i from 1 through 4 {
+    @for $j from 1 through 6 {
+        .margin-#{nth($direction,$i)}#{$j * 5} {
+            margin-#{nth($direction,$i)}: $j * 5px;
+        }
+        .padding#{nth($direction,$i)}#{$j * 5} {
+            padding-#{nth($direction,$i)}: $j * 5px;
+        }
+    }
+}

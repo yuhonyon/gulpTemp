@@ -1,0 +1,55 @@
+//
+// Utility classes
+// --------------------------------------------------
+
+
+// Floats
+// -------------------------
+
+.up-clearfix {
+  @include clearfix;
+}
+.up-center-block {
+  @include center-block;
+}
+.up-pull-right {
+  float: right !important;
+}
+.up-pull-left {
+  float: left !important;
+}
+
+
+// Toggling content
+// -------------------------
+
+// Note: Deprecated .up-hide in favor of .up-hidden or .up-sr-only (as appropriate) in v3.0.1
+.up-hide {
+  display: none !important;
+}
+.up-show {
+  display: block !important;
+}
+.up-invisible {
+  visibility: hidden;
+}
+.up-text-hide {
+  @include text-hide;
+}
+
+
+// Hide from screenreaders and browsers
+//
+// Credit: HTML5 Boilerplate
+
+.up-hidden {
+  display: none !important;
+}
+
+
+// For Affix plugin
+// -------------------------
+
+.up-affix {
+  position: fixed;
+}

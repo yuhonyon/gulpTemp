@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>首页</title>
+    <!-- 公共 -->
+    <meta charset="UTF-8">
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" name="viewport" id="viewport" />
+<meta name="renderer" content="webkit">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/style.min.css">
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="plugIn/nicescroll/jquery.nicescroll.min.js"></script>
+<script type="text/javascript" src="plugIn/ztree/jquery.ztree.core.min.js"></script>
+<script src="js/common.min.js"></script>
+<!--[if (gte IE 6)&(lte IE 8)]>
+  <script type="text/javascript" src="[JS library]"></script>
+  <script type="text/javascript" src="plugIn/ie8/selectivizr.min.js"></script>
+  <noscript><link rel="stylesheet" href="[fallback css]" /></noscript>
+  <script type="text/javascript" src="plugIn/ie8/html5shiv.min.js"></script>
+  <script type="text/javascript" src="plugIn/ie8/respond.min.js"></script>
+<![endif]-->
+
+    <!-- 公共end -->
+    <script src="js/echarts.min.js"></script>
+    <script src="js/allchart.min.js"></script>
+</head>
+
+<body>
+    <div class="container-full wrapper">
+        <!-- 头部 -->
+        <div class="header">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+                </button>
+                <a class="navbar-brand" href="javascript:void(0);"><img src="images/logo.png"></a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="index.html"><i class="icon-gr-Home"></i>首页 </a></li>
+                    <li><a href="dataSource.html"><i class="icon-gr-rds-16"></i>数据源</a></li>
+                    <li><a href="production.html"><i class="icon-gr-wodeziyuan"></i>作品</a></li>
+                    <li><a href="templet.html"><i class="icon-gr-moban"></i>模板</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <div class="header-nav-form">
+                            <input type="text" name="">
+                            <i class="icon-gr-fangdajing"></i>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="header-portrait"><img src="images/touxiang.png"></span>小王二<span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="javascript:void(0);">个人中心</a></li>
+                            <li><a href="javascript:void(0);">我的消息</a></li>
+                            <li class="divider"></li>
+                            <li><a href="javascript:void(0);" >退出</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="javascript:void(0);" class="header-logout"><i class="icon-gr-tuichu"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+
+        <!-- 头部 end -->
+        <!-- 侧栏 -->
+        <div class="sidebar">
+    <div class="sidebar-header">
+        <h5>模板列表</h5>
+        <a href=""><i class="icon-gr-jiahao"></i></a>
+    </div>
+    <div class="sidebar-list">
+        <div class="sidebar-tree">
+            <ul id="example-tree1" class="ztree-sidebar"></ul>
+        </div>
+    </div>
+</div>
+
+
+
+   
+        <script>
+        var setting = {
+            diySetting: {
+                accordion: false
+            },
+            diyClass: {
+                nodeDir: "icon-gr-folder",
+                nodeOpenDir: "icon-gr-wenjianjia",
+            }
+        };
+        var zNodes = [{
+            name: '9月成绩表',
+            open: true,
+            extend: "<a class='ztree-right-icon icon-gr-sandianshu'></a>",
+            children: [{
+                name: '产品表',
+            },{
+                name: '产品表',
+            },{
+                name: '产品表',
+            },{
+                name: '产品表',
+            },{
+                name: '产品表',
+            }, {
+                name: '类型表',
+            }]
+        },{
+            name: '市场行情调查',
+            children: [{
+                name: '产品表',
+            }, {
+                name: '类型表',
+            }]
+        }];
+
+        $("#example-tree1").ztreeSidebar(zNodes, setting);
+        </script>
+        <!-- 侧栏 end -->
+        <div class="content">
+            <div class="title">
+                <h4>市场行情调查 <small>创建时间:2016.12.5,包括4个图表</small></h4>
+                <div class="title-right">
+                    <button class="btn btn-link btn-xs"><i class="icon-u-home"></i>添加图表</button>
+                    <button class="btn btn-link btn-xs"><i class="icon-u-home"></i>布局模式</button>
+                    <button class="btn btn-warning btn-xs"><i class="icon-u-home"></i>导出</button>
+                    <button class="btn btn-warning btn-xs"><i class="icon-u-home"></i>分享</button>
+                </div>
+            </div>
+            <div class="main">
+                <div class="panel-wrapper production-panel">
+                    <div class="panel-box col-sm-12">
+                        <div class="panel">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">文理选课情况</h3>
+                                <div class="panel-menu">
+                                    <a href="###"><i class="icon-gr-bianji1"></i></a>
+                                    <a href="###"><i class="icon-gr-demo18"></i></a>
+                                    <a href="###"><i class="icon-gr-fenxiang"></i></a>
+                                    <a href="###" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-gr-unie644"></i></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">添加分类</a></li>
+                                        <li><a href="#">添加作品</a></li>
+                                        <li><a href="#">删除</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="panel-body">
+                                <div class="demochart" id="demochart2"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-box col-sm-12">
+                        <div class="panel">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">文理选课情况</h3>
+                                <div class="panel-menu">
+                                    <a href="###"><i class="icon-gr-bianji1"></i></a>
+                                    <a href="###"><i class="icon-gr-demo18"></i></a>
+                                    <a href="###"><i class="icon-gr-fenxiang"></i></a>
+                                    <a href="###" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-gr-unie644"></i></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">添加分类</a></li>
+                                        <li><a href="#">添加作品</a></li>
+                                        <li><a href="#">删除</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="panel-body">
+                                <div class="demochart" id="demochart3"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-box col-sm-12">
+                        <div class="panel">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">文理选课情况</h3>
+                                <div class="panel-menu">
+                                    <a href="###"><i class="icon-gr-bianji1"></i></a>
+                                    <a href="###"><i class="icon-gr-demo18"></i></a>
+                                    <a href="###"><i class="icon-gr-fenxiang"></i></a>
+                                    <a href="###" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-gr-unie644"></i></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">添加分类</a></li>
+                                        <li><a href="#">添加作品</a></li>
+                                        <li><a href="#">删除</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="panel-body">
+                                <div class="demochart" id="demochart4"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-box col-sm-12">
+                        <div class="panel">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">文理选课情况</h3>
+                                <div class="panel-menu">
+                                    <a href="###"><i class="icon-gr-bianji1"></i></a>
+                                    <a href="###"><i class="icon-gr-demo18"></i></a>
+                                    <a href="###"><i class="icon-gr-fenxiang"></i></a>
+                                    <a href="###" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-gr-unie644"></i></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">添加分类</a></li>
+                                        <li><a href="#">添加作品</a></li>
+                                        <li><a href="#">删除</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="panel-body">
+                                <div class="demochart" id="demochart5"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,12 @@
+.modal-header{
+	background: #4daaf7;
+	color: #fff;
+	font-size: 14px;
+	@include border-radius(3px,3px,0,0);
+	.close{
+		opacity: 1;
+		color: #fff;
+		padding-top: 10px;
+
+	}
+}

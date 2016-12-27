@@ -1,0 +1,252 @@
+$tab-height:40px;
+$tab-color:$fcq;
+$tab-bg:#f8f8f8;
+$tab-active-color:#666;
+$tab-active-bg:#fff;
+$tab-primary-color:$cp;
+$tab-border-color:$bc;
+$tab-dark-bg:#f5f5f5;
+.tab-body {
+    display: none;
+    &.active {
+        display: block;
+    }
+}
+
+.tab-nav {
+    @include clearfix();
+    height: $tab-height;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    ul {
+        padding: 0;
+        list-style: none;
+        height: 100%;
+        width: 9999px;
+        border-bottom: 1px solid $tab-border-color;
+    }
+    li {
+        cursor: pointer;
+        padding: 0px 15px;
+        padding-top: 1px;
+        height: $tab-height;
+        line-height: $tab-height;
+        text-align: center;
+        color: $tab-color;
+        border: 1px solid $tab-border-color;
+        border-left: 0;
+        float: left;
+        background: $tab-bg;
+        position: relative;
+        top: 0;
+        &:nth-child(1) {
+            border-left: 1px solid $tab-border-color;
+        }
+        &.active {
+            border-top: 2px solid $tab-primary-color;
+            padding-top: 0;
+            background: $tab-active-bg;
+            height: $tab-height;
+        }
+        &:hover {
+            color: $tab-primary-color;
+            background: lighten($tab-bg, 5%);
+        }
+        &.tab-add {
+            background: $tab-bg;
+        }
+        .icon-remove2 {
+            color: $tab-color;
+            margin-left: 15px;
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+    .tab-nav-btn-prev {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: $tab-height + 2px;
+        border: 1px solid $tab-border-color;
+        padding: 0 10px;
+        display: none;
+        z-index: 2;
+    }
+    .tab-nav-btn-next {
+        position: absolute;
+        right: 0;
+        top: 0;
+        border: 1px solid $tab-border-color;
+        width: $tab-height + 2px;
+        padding: 0 10px;
+        display: none;
+        z-index: 2;
+    }
+    &.tab-nav-multi {
+        ul {
+            padding: 0 $tab-height + 1px;
+            @include transition(margin .5s)
+        }
+        .tab-nav-btn-prev,
+        .tab-nav-btn-next {
+            display: block;
+        }
+    }
+    &.tab-nav-dark {
+        ul {
+            border-bottom: 2px solid $tab-primary-color;
+            ;
+        }
+        li {
+            border-bottom: 0;
+            background: $tab-dark-bg;
+            height: $tab-height - 2px;
+            color: $tab-primary-color;
+            &:hover {
+                color: darken($tab-primary-color, 20%);
+                background: darken($tab-dark-bg, 1%);
+            }
+            &.active {
+                background: $tab-primary-color;
+                ;
+                padding-top: 1px;
+                height: $tab-height - 2px;
+                border-top: 0;
+                color: #fff;
+            }
+            &.active:hover {
+                color: darken($tab-dark-bg, 5%);
+            }
+        }
+    }
+    &.tab-nav-line {
+        li {
+            background: #fff;
+            border: 0;
+            border-bottom: 1px solid $tab-border-color;
+            &.active {
+                border-bottom: 2px solid $tab-primary-color;
+                line-height: $tab-height + 2px;
+            }
+        }
+    }
+}
+
+$tab-ladder-bg:#f5f5f5;
+$tab-ladder-height:30px;
+$tab-ladder-width:160px;
+.tab-nav.tab-ladder {
+    height: $tab-ladder-height;
+    ul {
+        border-bottom: 0;
+    }
+    li {
+        width: $tab-ladder-width;
+        border: 0;
+        height: $tab-ladder-height;
+        line-height: $tab-ladder-height;
+        text-align: left;
+        padding-top: 0;
+        background: transparent;
+        position: relative;
+        padding-left: 15px;
+        padding-right: 15px;
+        .icon-remove2 {
+            position: absolute;
+            right: 5px;
+            top: 0;
+        }
+        &:hover {
+            color: $tab-color;
+        }
+        &:before {
+            content: "";
+            border-top: $tab-ladder-height solid $tab-border-color;
+            border-left: ($tab-ladder-height / 4) solid transparent;
+            border-right: ($tab-ladder-height / 4) solid transparent;
+            position: absolute;
+            width: ($tab-ladder-width + $tab-ladder-height / 4);
+            left: 0px;
+            top: 0;
+            z-index: -1;
+        }
+        &:after {
+            content: "";
+            border-top: ($tab-ladder-height - 1) solid $tab-ladder-bg;
+            border-left: ($tab-ladder-height / 4) solid transparent;
+            border-right: ($tab-ladder-height / 4) solid transparent;
+            position: absolute;
+            width: ($tab-ladder-width + $tab-ladder-height / 4 - 2px);
+            left: 1px;
+            top: 0;
+            z-index: -1;
+        }
+        &.active {
+            border-top: 0;
+            &:after {
+                border-top-color: #fff;
+            }
+        }
+        &.tab-add {
+            background: darken($tab-ladder-bg, 10%);
+            margin-left: 15px;
+            width: auto;
+            color: #fff;
+            padding: 0;
+            &:after,
+            &:before {
+                width: 0;
+                height: 0;
+                border: $tab-ladder-height solid transparent;
+                border-left-width: ($tab-ladder-height / 4);
+                border-right-width: ($tab-ladder-height / 4);
+            }
+            &:after {
+                border-left-color: darken($tab-ladder-bg, 10%);
+                border-top-color: darken($tab-ladder-bg, 10%);
+                right: -($tab-ladder-height/4);
+                left: auto;
+            }
+            &:before {
+                border-right-color: darken($tab-ladder-bg, 10%);
+                border-bottom-color: darken($tab-ladder-bg, 10%);
+                left: -($tab-ladder-height/2 - 1px);
+            }
+        }
+        &.tab-nav-btn-prev,
+        &.tab-nav-btn-next {
+            position: absolute;
+            background: darken($tab-ladder-bg, 10%);
+            width: ($tab-ladder-height /2 + 2px);
+            text-align: center;
+            padding: 0;
+            &:after,
+            &:before {
+                width: 0;
+                height: 0;
+                border: $tab-ladder-height solid transparent;
+                border-left-width: ($tab-ladder-height / 4);
+                border-right-width: ($tab-ladder-height / 4);
+            }
+            &:after {
+                border-left-color: darken($tab-ladder-bg, 10%);
+                border-bottom-color: darken($tab-ladder-bg, 10%);
+                right: -($tab-ladder-height/2 - 1px);
+                left: auto;
+            }
+            &:before {
+                border-right-color: darken($tab-ladder-bg, 10%);
+                border-bottom-color: darken($tab-ladder-bg, 10%);
+                left: -($tab-ladder-height/2 - 1px);
+            }
+        }
+    }
+    &.tab-multi {
+        ul {
+            padding: 0 $tab-ladder-height /2 + 3px;
+            @include transition(margin .5s)
+        }
+    }
+}

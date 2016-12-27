@@ -1,0 +1,244 @@
+//
+// Button groups
+// --------------------------------------------------
+
+// Make the div behave like a button
+.up-btn-group,
+.up-btn-group-vertical {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle; // match .up-btn alignment given font-size hack above
+  > .up-btn {
+    position: relative;
+    float: left;
+    // Bring the "active" button to the front
+    &:hover,
+    &:focus,
+    &:active,
+    &.up-active {
+      z-index: 2;
+    }
+  }
+}
+
+// Prevent double borders when buttons are next to each other
+.up-btn-group {
+  .up-btn + .up-btn,
+  .up-btn + .up-btn-group,
+  .up-btn-group + .up-btn,
+  .up-btn-group + .up-btn-group {
+    margin-left: -1px;
+  }
+}
+
+// Optional: Group multiple button groups together for a toolbar
+.up-btn-toolbar {
+  margin-left: -5px; // Offset the first child's margin
+  @include clearfix;
+
+  .up-btn,
+  .up-btn-group,
+  .up-input-group {
+    float: left;
+  }
+  > .up-btn,
+  > .up-btn-group,
+  > .up-input-group {
+    margin-left: 5px;
+  }
+}
+
+.up-btn-group > .up-btn:not(:first-child):not(:last-child):not(.up-dropdown-toggle) {
+  border-radius: 0;
+}
+
+// Set corners individual because sometimes a single button can be in a .up-btn-group and we need :first-child and :last-child to both match
+.up-btn-group > .up-btn:first-child {
+  margin-left: 0;
+  &:not(:last-child):not(.up-dropdown-toggle) {
+    @include border-right-radius(0);
+  }
+}
+// Need .up-dropdown-toggle since :last-child doesn't apply given a .up-dropdown-menu immediately after it
+.up-btn-group > .up-btn:last-child:not(:first-child),
+.up-btn-group > .up-dropdown-toggle:not(:first-child) {
+  @include border-left-radius(0);
+}
+
+// Custom edits for including btn-groups within btn-groups (useful for including dropdown buttons within a btn-group)
+.up-btn-group > .up-btn-group {
+  float: left;
+}
+.up-btn-group > .up-btn-group:not(:first-child):not(:last-child) > .up-btn {
+  border-radius: 0;
+}
+.up-btn-group > .up-btn-group:first-child:not(:last-child) {
+  > .up-btn:last-child,
+  > .up-dropdown-toggle {
+    @include border-right-radius(0);
+  }
+}
+.up-btn-group > .up-btn-group:last-child:not(:first-child) > .up-btn:first-child {
+  @include border-left-radius(0);
+}
+
+// On active and open, don't show outline
+.up-btn-group .up-dropdown-toggle:active,
+.up-btn-group.up-open .up-dropdown-toggle {
+  outline: 0;
+}
+
+
+// Sizing
+//
+// Remix the default button sizing classes into new ones for easier manipulation.
+
+.up-btn-group-xs > .up-btn { @extend .up-btn-xs; }
+.up-btn-group-sm > .up-btn { @extend .up-btn-sm; }
+.up-btn-group-lg > .up-btn { @extend .up-btn-lg; }
+
+
+// Split button dropdowns
+// ----------------------
+
+// Give the line between buttons some depth
+.up-btn-group > .up-btn + .up-dropdown-toggle {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+.up-btn-group > .up-btn-lg + .up-dropdown-toggle {
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+// The clickable button for toggling the menu
+// Remove the gradient and set the same inset shadow as the :active state
+.up-btn-group.up-open .up-dropdown-toggle {
+  @include box-shadow(inset 0 3px 5px rgba(0,0,0,.125));
+
+  // Show no shadow for `.up-btn-link` since it has no other button styles.
+  &.up-btn-link {
+    @include box-shadow(none);
+  }
+}
+
+
+// Reposition the caret
+.up-btn .up-caret {
+  margin-left: 0;
+}
+// Carets in other button sizes
+.up-btn-lg .up-caret {
+  border-width: $caret-width-large $caret-width-large 0;
+  border-bottom-width: 0;
+}
+// Upside down carets for .up-dropup
+.up-dropup .up-btn-lg .up-caret {
+  border-width: 0 $caret-width-large $caret-width-large;
+}
+
+
+// Vertical button groups
+// ----------------------
+
+.up-btn-group-vertical {
+  > .up-btn,
+  > .up-btn-group,
+  > .up-btn-group > .up-btn {
+    display: block;
+    float: none;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  // Clear floats so dropdown menus can be properly placed
+  > .up-btn-group {
+    @include clearfix;
+    > .up-btn {
+      float: none;
+    }
+  }
+
+  > .up-btn + .up-btn,
+  > .up-btn + .up-btn-group,
+  > .up-btn-group + .up-btn,
+  > .up-btn-group + .up-btn-group {
+    margin-top: -1px;
+    margin-left: 0;
+  }
+}
+
+.up-btn-group-vertical > .up-btn {
+  &:not(:first-child):not(:last-child) {
+    border-radius: 0;
+  }
+  &:first-child:not(:last-child) {
+    border-top-right-radius: $btn-border-radius-base;
+    @include border-bottom-radius(0);
+  }
+  &:last-child:not(:first-child) {
+    border-bottom-left-radius: $btn-border-radius-base;
+    @include border-top-radius(0);
+  }
+}
+.up-btn-group-vertical > .up-btn-group:not(:first-child):not(:last-child) > .up-btn {
+  border-radius: 0;
+}
+.up-btn-group-vertical > .up-btn-group:first-child:not(:last-child) {
+  > .up-btn:last-child,
+  > .up-dropdown-toggle {
+    @include border-bottom-radius(0);
+  }
+}
+.up-btn-group-vertical > .up-btn-group:last-child:not(:first-child) > .up-btn:first-child {
+  @include border-top-radius(0);
+}
+
+
+// Justified button groups
+// ----------------------
+
+.up-btn-group-justified {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: separate;
+  > .up-btn,
+  > .up-btn-group {
+    float: none;
+    display: table-cell;
+    width: 1%;
+  }
+  > .up-btn-group .up-btn {
+    width: 100%;
+  }
+
+  > .up-btn-group .up-dropdown-menu {
+    left: auto;
+  }
+}
+
+
+// Checkbox and radio options
+//
+// In order to support the browser's form validation feedback, powered by the
+// `required` attribute, we have to "hide" the inputs via `clip`. We cannot use
+// `display: none;` or `visibility: hidden;` as that also hides the popover.
+// Simply visually hiding the inputs via `opacity` would leave them clickable in
+// certain cases which is prevented by using `clip` and `pointer-events`.
+// This way, we ensure a DOM element is visible to position the popover from.
+//
+// See https://github.com/twbs/uplan/pull/12794 and
+// https://github.com/twbs/uplan/pull/14559 for more information.
+
+[data-toggle="buttons"] {
+  > .up-btn,
+  > .up-btn-group > .up-btn {
+    input[type="radio"],
+    input[type="checkbox"] {
+      position: absolute;
+      clip: rect(0,0,0,0);
+      pointer-events: none;
+    }
+  }
+}

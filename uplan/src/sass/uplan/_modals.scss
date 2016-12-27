@@ -1,0 +1,150 @@
+//
+// Modals
+// --------------------------------------------------
+
+// .up-modal-open      - body class for killing the scroll
+// .up-modal           - container to scroll within
+// .up-modal-dialog    - positioning shell for the actual modal
+// .up-modal-content   - actual modal w/ bg and corners and shit
+
+// Kill the scroll on the body
+.up-modal-open {
+  overflow: hidden;
+}
+
+// Container that the modal scrolls within
+.up-modal {
+  display: none;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: $zindex-modal;
+  -webkit-overflow-scrolling: touch;
+
+  // Prevent Chrome on Windows from adding a focus outline. For details, see
+  // https://github.com/twbs/uplan/pull/10951.
+  outline: 0;
+
+  // When fading in the modal, animate it to slide down
+  &.up-fade .up-modal-dialog {
+    @include translate(0, -25%);
+    @include transition-transform(0.3s ease-out);
+  }
+  &.up-in .up-modal-dialog { @include translate(0, 0) }
+}
+.up-modal-open .up-modal {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+// Shell div to position the modal with bottom padding
+.up-modal-dialog {
+  position: relative;
+  width: auto;
+  margin: 10px;
+}
+
+// Actual modal
+.up-modal-content {
+  position: relative;
+  background-color: $modal-content-bg;
+  border: 1px solid $modal-content-fallback-border-color; //old browsers fallback (ie8 etc)
+  border: 1px solid $modal-content-border-color;
+  border-radius: $border-radius-large;
+  @include box-shadow(0 3px 9px rgba(0,0,0,.5));
+  background-clip: padding-box;
+  // Remove focus outline from opened modal
+  outline: 0;
+}
+
+// Modal background
+.up-modal-backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: $zindex-modal-background;
+  background-color: $modal-backdrop-bg;
+  // Fade for backdrop
+  &.up-fade { @include opacity(0); }
+  &.up-in { @include opacity($modal-backdrop-opacity); }
+}
+
+// Modal header
+// Top section of the modal w/ title and dismiss
+.up-modal-header {
+  padding: $modal-title-padding;
+  border-bottom: 1px solid $modal-header-border-color;
+  min-height: ($modal-title-padding + $modal-title-line-height);
+}
+// Close icon
+.up-modal-header .up-close {
+  margin-top: -2px;
+}
+
+// Title text within header
+.up-modal-title {
+  margin: 0;
+  line-height: $modal-title-line-height;
+}
+
+// Modal body
+// Where all modal content resides (sibling of .up-modal-header and .up-modal-footer)
+.up-modal-body {
+  position: relative;
+  padding: $modal-inner-padding;
+}
+
+// Footer (for actions)
+.up-modal-footer {
+  padding: $modal-inner-padding;
+  text-align: right; // right align buttons
+  border-top: 1px solid $modal-footer-border-color;
+  @include clearfix; // clear it in case folks use .up-pull-* classes on buttons
+
+  // Properly space out buttons
+  .up-btn + .up-btn {
+    margin-left: 5px;
+    margin-bottom: 0; // account for input[type="submit"] which gets the bottom margin like all other inputs
+  }
+  // but override that for button groups
+  .up-btn-group .up-btn + .up-btn {
+    margin-left: -1px;
+  }
+  // and override it for block buttons as well
+  .up-btn-block + .up-btn-block {
+    margin-left: 0;
+  }
+}
+
+// Measure scrollbar width for padding body during modal show/hide
+.up-modal-scrollbar-measure {
+  position: absolute;
+  top: -9999px;
+  width: 50px;
+  height: 50px;
+  overflow: scroll;
+}
+
+// Scale up the modal
+@media (min-width: $screen-sm-min) {
+  // Automatically set modal's width for larger viewports
+  .up-modal-dialog {
+    width: $modal-md;
+    margin: 30px auto;
+  }
+  .up-modal-content {
+    @include box-shadow(0 5px 15px rgba(0,0,0,.5));
+  }
+
+  // Modal sizes
+  .up-modal-sm { width: $modal-sm; }
+}
+
+@media (min-width: $screen-md-min) {
+  .up-modal-lg { width: $modal-lg; }
+}

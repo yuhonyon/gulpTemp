@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>首页</title>
+    <!-- 公共 -->
+    @@include('./include/head.html')
+    <!-- 公共end -->
+    <script src="plugIn/jqGrid/jqGrid.min.js"></script>
+</head>
+
+<body>
+    <div class="up-container-full edit edit-data-wrapper">
+        <div class="edit-header">
+            <div class="fl">
+                <h3><i class="icon-u-home"></i>数据预览</h3></div>
+            <div class="fr">
+                <button class="up-btn up-btn-default up-btn-sm">下一步</button>
+                <button class="up-btn up-btn-default up-btn-sm">退出</button>
+            </div>
+        </div>
+        <!-- 侧栏 -->
+        @@include('./include/editDataSidebar.html')
+        <script>
+        var setting = {
+            diySetting: {
+                accordion: false
+            },
+            diyClass: {
+                nodeDir: "icon-gr-folder",
+                nodeOpenDir: "icon-gr-wenjianjia",
+            }
+        };
+        var zNodes = [{
+            name: '9月成绩表',
+            open: true,
+            extend: "<a class='ztree-right-icon icon-gr-sandianshu'></a>",
+            children: [{
+                name: '产品表',
+            }, {
+                name: '产品表',
+            }, {
+                name: '产品表',
+            }, {
+                name: '产品表',
+            }, {
+                name: '产品表',
+            }, {
+                name: '类型表',
+            }]
+        }, {
+            name: '市场行情调查',
+            children: [{
+                name: '产品表',
+            }, {
+                name: '类型表',
+            }]
+        }];
+
+        $("#example-tree1").ztreeSidebar(zNodes, setting);
+        </script>
+        <!-- 侧栏 end -->
+        <div class="edit-data-main">
+            <div class="edit-data">
+                 <table id="grid" class="jqgrid"></table>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+(function() {
+
+$("#grid").jqGrid({
+    url: 'http://trirand.com/blog/phpjqgrid/examples/jsonp/getjsonp.php?callback=?&qwery=longorders',
+    mtype: "GET",
+    datatype: "jsonp",
+    colModel: [{
+        label: 'OrderID',
+        name: 'OrderID',
+        key: true,
+        width: 75
+    }, {
+        label: 'Customer ID',
+        name: 'CustomerID',
+        width: 150
+    }, {
+        label: 'Order Date',
+        name: 'OrderDate',
+        width: 150
+    }, {
+        label: 'Freight',
+        name: 'Freight',
+        width: 150
+    }, {
+        label: 'Ship Name',
+        name: 'ShipName',
+        width: 150
+    }],
+    page: 1,
+    autowidth: true,
+    height: $(".edit-data").height()-50,
+    viewrecords: true,
+    pager: "#gridPager2",
+});
+
+
+
+}());
+</script>
+
+</html>

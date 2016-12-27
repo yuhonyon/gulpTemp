@@ -1,0 +1,96 @@
+@at-root {
+    @font-face {
+        font-family: $iconfontName;
+        src: url('../fonts/#{$iconfontFileName}.eot?');
+        src: url('../fonts/#{$iconfontFileName}.eot?#iefix') format('embedded-opentype'), url('../fonts/#{$iconfontFileName}.woff?') format('woff'), url('../fonts/#{$iconfontFileName}.ttf?') format('truetype'), url('../fonts/#{$iconfontFileName}.svg?#iconfont') format('svg');
+    }
+}
+
+[class^="#{$iconfontClassName}"]:before,
+[class*=" #{$iconfontClassName}"]:before{
+    content:"";
+    font-family: $iconfontName;
+    font-style: normal;
+    font-weight: normal;
+    speak: none;
+    display: inline-block;
+    text-decoration: inherit;
+    width: 1em;
+    margin-right: .2em;
+    text-align: center;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1em;
+    margin-left: .2em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-gr-bianji:before { content: "\e601"; }
+
+.icon-gr-wenjianjia:before { content: "\e600"; }
+
+.icon-gr-Home:before { content: "\e608"; }
+
+.icon-gr-fenxiang:before { content: "\e62e"; }
+
+.icon-gr-chart:before { content: "\e62c"; }
+
+.icon-gr-meun:before { content: "\e648"; }
+
+.icon-gr-diqiu:before { content: "\e615"; }
+
+.icon-gr-tuichu:before { content: "\e6a3"; }
+
+.icon-gr-shijian:before { content: "\e614"; }
+
+.icon-gr-infenicon17:before { content: "\e7b0"; }
+
+.icon-gr-fangdajing:before { content: "\e603"; }
+
+.icon-gr-arrow121112:before { content: "\e60d"; }
+
+.icon-gr-fujian:before { content: "\e7bd"; }
+
+.icon-gr-bianji1:before { content: "\e602"; }
+
+.icon-gr-jiahao:before { content: "\e685"; }
+
+.icon-gr-icon04:before { content: "\e638"; }
+
+.icon-gr-demo18:before { content: "\e612"; }
+
+.icon-gr-riqi:before { content: "\e639"; }
+
+.icon-gr-jiantou:before { content: "\e613"; }
+
+.icon-gr-abc:before { content: "\e666"; }
+
+.icon-gr-rds-16:before { content: "\e63f"; }
+
+.icon-gr-folder:before { content: "\e64f"; }
+
+.icon-gr-yemianbuju:before { content: "\e658"; }
+
+.icon-gr-unie644:before { content: "\e67c"; }
+
+.icon-gr-moban:before { content: "\e630"; }
+
+.icon-gr-daochu:before { content: "\e63a"; }
+
+.icon-gr-wodeziyuan:before { content: "\e62b"; }
+
+.icon-gr-piliang:before { content: "\e6d0"; }
+
+.icon-gr-sandianshu:before { content: "\e676"; }
+
+.icon-gr-jiantou-copy:before { content: "\e7b1"; }
+
+.icon-gr-jiantou-copy-copy:before { content: "\e7b2"; }
+
+.icon-gr-jiantou-copy-copy-copy:before { content: "\e7b3"; }
+
+.icon-gr-jingzibiaoqian:before { content: "\e606"; }
+
+
+

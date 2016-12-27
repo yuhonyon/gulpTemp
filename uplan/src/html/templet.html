@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>首页</title>
+    <!-- 公共 -->
+    @@include('./include/head.html')
+    <!-- 公共end -->
+    <script src="js/echarts.min.js"></script>
+    <script src="js/allchart.min.js"></script>
+</head>
+
+<body>
+    <div class="up-container-full wrapper">
+        <!-- 头部 -->
+        @@include('./include/header.html')
+        <!-- 头部 end -->
+        <!-- 侧栏 -->
+        @@include('./include/sidebar.html')
+        <script>
+        var setting = {
+            diySetting: {
+                accordion: false
+            },
+            diyClass: {
+                nodeDir: "icon-gr-folder",
+                nodeOpenDir: "icon-gr-wenjianjia",
+            }
+        };
+        var zNodes = [{
+            name: '9月成绩表',
+            open: true,
+            extend: "<a class='ztree-right-icon icon-gr-sandianshu'></a>",
+            children: [{
+                name: '产品表',
+            },{
+                name: '产品表',
+            },{
+                name: '产品表',
+            },{
+                name: '产品表',
+            },{
+                name: '产品表',
+            }, {
+                name: '类型表',
+            }]
+        },{
+            name: '市场行情调查',
+            children: [{
+                name: '产品表',
+            }, {
+                name: '类型表',
+            }]
+        }];
+
+        $("#example-tree1").ztreeSidebar(zNodes, setting);
+        </script>
+        <!-- 侧栏 end -->
+        <div class="content">
+            <div class="title">
+                <h4>题目</h4>
+                <div class="title-right">
+                    <button class="up-btn up-btn-link up-btn-xs"><i class="icon-gr-moban"></i>使用模板</button>
+    
+                </div>
+            </div>
+            <div class="main">
+                <div class="up-panel-wrapper index-panel">
+                    <div class="up-panel-box up-col-sm-6">
+                        <div class="up-panel">
+                            <div class="up-panel-body">
+                                <div class="demochart" id="demochart1"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="up-panel-box up-col-sm-6">
+                        <div class="up-panel">
+                            <div class="up-panel-body">
+                                <div class="demochart" id="demochart1"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="up-panel-box up-col-sm-6">
+                        <div class="up-panel">
+                            <div class="up-panel-body">
+                                <div class="demochart" id="demochart1"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="up-panel-box up-col-sm-6">
+                        <div class="up-panel">
+                            <div class="up-panel-body">
+                                <div class="demochart" id="demochart1"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="up-panel-box up-col-sm-12">
+                        <div class="up-panel">
+                            <div class="up-panel-heading">
+                                <h3 class="up-panel-title">文理选课情况</h3>
+                                <div class="up-panel-menu">
+                                    <a href="###"><i class="icon-gr-bianji1"></i></a>
+                                    <a href="###"><i class="icon-gr-demo18"></i></a>
+                                    <a href="###"><i class="icon-gr-fenxiang"></i></a>
+                                    <a href="###" class="up-dropdown-toggle" data-toggle="dropdown"><i class="icon-gr-unie644"></i></a>
+                                    <ul class="up-dropdown-menu">
+                                        <li><a href="#">添加分类</a></li>
+                                        <li><a href="#">添加作品</a></li>
+                                        <li><a href="#">删除</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="up-panel-body">
+                                <div class="demochart" id="demochart2"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="up-panel-box up-col-sm-12">
+                        <div class="up-panel">
+                            <div class="up-panel-heading">
+                                <h3 class="up-panel-title">文理选课情况</h3>
+                                <div class="up-panel-menu">
+                                    <a href="###"><i class="icon-gr-bianji1"></i></a>
+                                    <a href="###"><i class="icon-gr-demo18"></i></a>
+                                    <a href="###"><i class="icon-gr-fenxiang"></i></a>
+                                    <a href="###" class="up-dropdown-toggle" data-toggle="dropdown"><i class="icon-gr-unie644"></i></a>
+                                    <ul class="up-dropdown-menu">
+                                        <li><a href="#">添加分类</a></li>
+                                        <li><a href="#">添加作品</a></li>
+                                        <li><a href="#">删除</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="up-panel-body">
+                                <div class="demochart" id="demochart3"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="up-panel-box up-col-sm-12">
+                        <div class="up-panel">
+                            <div class="up-panel-heading">
+                                <h3 class="up-panel-title">文理选课情况</h3>
+                                <div class="up-panel-menu">
+                                    <a href="###"><i class="icon-gr-bianji1"></i></a>
+                                    <a href="###"><i class="icon-gr-demo18"></i></a>
+                                    <a href="###"><i class="icon-gr-fenxiang"></i></a>
+                                    <a href="###" class="up-dropdown-toggle" data-toggle="dropdown"><i class="icon-gr-unie644"></i></a>
+                                    <ul class="up-dropdown-menu">
+                                        <li><a href="#">添加分类</a></li>
+                                        <li><a href="#">添加作品</a></li>
+                                        <li><a href="#">删除</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="up-panel-body">
+                                <div class="demochart" id="demochart4"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="up-panel-box up-col-sm-12">
+                        <div class="up-panel">
+                            <div class="up-panel-heading">
+                                <h3 class="up-panel-title">文理选课情况</h3>
+                                <div class="up-panel-menu">
+                                    <a href="###"><i class="icon-gr-bianji1"></i></a>
+                                    <a href="###"><i class="icon-gr-demo18"></i></a>
+                                    <a href="###"><i class="icon-gr-fenxiang"></i></a>
+                                    <a href="###" class="up-dropdown-toggle" data-toggle="dropdown"><i class="icon-gr-unie644"></i></a>
+                                    <ul class="up-dropdown-menu">
+                                        <li><a href="#">添加分类</a></li>
+                                        <li><a href="#">添加作品</a></li>
+                                        <li><a href="#">删除</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="up-panel-body">
+                                <div class="demochart" id="demochart5"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="up-panel-box up-col-sm-12">
+                        <div class="up-panel">
+                            <div class="up-panel-heading">
+                                <h3 class="up-panel-title">文理选课情况</h3>
+                                <div class="up-panel-menu">
+                                    <a href="###"><i class="icon-gr-bianji1"></i></a>
+                                    <a href="###"><i class="icon-gr-demo18"></i></a>
+                                    <a href="###"><i class="icon-gr-fenxiang"></i></a>
+                                    <a href="###" class="up-dropdown-toggle" data-toggle="dropdown"><i class="icon-gr-unie644"></i></a>
+                                    <ul class="up-dropdown-menu">
+                                        <li><a href="#">添加分类</a></li>
+                                        <li><a href="#">添加作品</a></li>
+                                        <li><a href="#">删除</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="up-panel-body">
+                                <div class="demochart" id="demochart6"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="up-panel-box up-col-sm-12">
+                        <div class="up-panel">
+                            <div class="up-panel-heading">
+                                <h3 class="up-panel-title">文理选课情况</h3>
+                                <div class="up-panel-menu">
+                                    <a href="###"><i class="icon-gr-bianji1"></i></a>
+                                    <a href="###"><i class="icon-gr-demo18"></i></a>
+                                    <a href="###"><i class="icon-gr-fenxiang"></i></a>
+                                    <a href="###" class="up-dropdown-toggle" data-toggle="dropdown"><i class="icon-gr-unie644"></i></a>
+                                    <ul class="up-dropdown-menu">
+                                        <li><a href="#">添加分类</a></li>
+                                        <li><a href="#">添加作品</a></li>
+                                        <li><a href="#">删除</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="up-panel-body">
+                                <div class="demochart" id="demochart7"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="up-panel-box up-col-sm-12">
+                        <div class="up-panel">
+                            <div class="up-panel-heading">
+                                <h3 class="up-panel-title">文理选课情况</h3>
+                                <div class="up-panel-menu">
+                                    <a href="###"><i class="icon-gr-bianji1"></i></a>
+                                    <a href="###"><i class="icon-gr-demo18"></i></a>
+                                    <a href="###"><i class="icon-gr-fenxiang"></i></a>
+                                    <a href="###" class="up-dropdown-toggle" data-toggle="dropdown"><i class="icon-gr-unie644"></i></a>
+                                    <ul class="up-dropdown-menu">
+                                        <li><a href="#">添加分类</a></li>
+                                        <li><a href="#">添加作品</a></li>
+                                        <li><a href="#">删除</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="up-panel-body">
+                                <div class="demochart" id="demochart8"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="up-panel-box up-col-sm-12">
+                        <div class="up-panel">
+                            <div class="up-panel-heading">
+                                <h3 class="up-panel-title">文理选课情况</h3>
+                                <div class="up-panel-menu">
+                                    <a href="###"><i class="icon-gr-bianji1"></i></a>
+                                    <a href="###"><i class="icon-gr-demo18"></i></a>
+                                    <a href="###"><i class="icon-gr-fenxiang"></i></a>
+                                    <a href="###" class="up-dropdown-toggle" data-toggle="dropdown"><i class="icon-gr-unie644"></i></a>
+                                    <ul class="up-dropdown-menu">
+                                        <li><a href="#">添加分类</a></li>
+                                        <li><a href="#">添加作品</a></li>
+                                        <li><a href="#">删除</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="up-panel-body">
+                                <div class="demochart" id="demochart9"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

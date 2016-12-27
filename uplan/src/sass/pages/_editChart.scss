@@ -1,0 +1,44 @@
+.edit-chart-slider {
+    padding: 0 60px;
+    position: relative;
+    .edit-slider {
+        height: 66px;
+        margin-top: 32px;
+        position: relative;
+        .swiper-slide {
+            height: 66px;
+            padding: 0 10px;
+            &.swiper-slide-active{
+            	.edit-chart-list{
+            		border: 2px solid $cp;
+            	}
+            }
+            .edit-chart-list {
+                width: 66px;
+                height: 66px;
+                border-radius: 3px;
+                border: 1px solid $bc;
+                margin: 0 auto;
+                overflow: hidden;
+                cursor: pointer;
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+    .swiper-btn {
+        position: absolute;
+        cursor: pointer;
+        color: $cp;
+        font-size: 20px;
+        &.swiper-prev {
+            left: 20px;
+            top: 48px;
+        }
+        &.swiper-next {
+            right: 20px;
+            top: 48px;
+        }
+    }
+}

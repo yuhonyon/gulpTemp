@@ -1,0 +1,55 @@
+.panel-box {
+    padding: 0 8px;
+}
+
+.panel-wrapper {
+    margin-left: -8px;
+    margin-right: -8px;
+}
+
+.panel {
+    margin-bottom: 16px;
+    border-color: $bc;
+    .panel-heading {
+        background: #fff;
+        color: $fc;
+        padding: 0 15px;
+        height: 40px;
+
+        @include clearfix();
+        .panel-title {
+            float: left;
+            line-height: 40px;
+            color: $fcs;
+            font-size: 14px;
+        }
+
+        .panel-menu {
+            position: relative;
+            float: right;
+            line-height: 40px;
+            display: none;
+            >a {
+                color: $fcq;
+                position: relative;
+                font-size: 16px;
+                margin: 0 3px;
+                &:hover {
+                    color: $fcs;
+                }
+            }
+            >.dropdown-menu {
+                left: auto;
+                right: 0;
+                top: 100%;
+                min-width: 120px;
+            }
+        }
+    }
+    .panel-body{
+        @include clearfix();
+    }
+    &:hover .panel-heading>.panel-menu {
+        display: block;
+    }
+}

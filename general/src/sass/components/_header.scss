@@ -1,0 +1,72 @@
+.header {
+    padding-left: $sidebarWidth;
+    background: $cp;
+    .header_logo {
+        width: $sidebarWidth;
+        position: absolute;
+        left: 0;
+        top: 0;
+        text-align: center;
+        line-height: $headerHeight;
+        height: 100%;
+        background: #1479c8;
+        img{
+            
+                vertical-align: middle;
+        }
+    }
+    .headr_main {
+        width: 100%;
+        @include clearfix();
+    }
+    .header_left {
+        float: left;
+        li {
+            float: left;
+            height: 100%;
+            color: #fff;
+            a {
+                line-height: 55px;
+                padding: 0 30px;
+                height: 100%;
+                color: #fff;
+                font-size: 14px;
+            	display: block;
+            	cursor: pointer;
+                i{
+                    font-size: 26px;
+                    position: relative;
+                    top:(18px - 14px) ;
+                }
+                &.active{
+                	background: #51abf3;
+                }
+            }
+        }
+    }
+    .header_right {
+        float: right;
+        li {
+            float: left;
+            height: 100%;
+            
+            color: #fff;
+            a {
+            	line-height: 60px;
+                color: #fff;
+                padding:0 15px;
+                cursor: pointer;
+                border-right:1px solid #fff;
+                i{
+                    font-size: 18px;
+                    position: relative;
+                    top:(18px - 14px) /2 ;
+                }
+
+            }
+            &:last-of-type>a{
+                border-right:0;
+            }
+        }
+    }
+}

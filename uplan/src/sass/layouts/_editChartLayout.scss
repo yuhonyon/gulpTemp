@@ -1,0 +1,38 @@
+$editHeaderHeight:56px;
+$editChartSidebarWidth:480px;
+.edit-chart-wrapper {
+    height: 100%;
+    padding: $editHeaderHeight $editChartSidebarWidth 0 0;
+    .edit-header {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: $editHeaderHeight;
+        z-index: 9;
+    }
+    .edit-chart-main {
+        height: 100%;
+        padding-bottom: 130px;
+        position: relative;
+        .edit-chart {
+            height: 100%;
+        }
+        .edit-chart-slider {
+            height: 130px;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+        }
+    }
+    .edit-chart-sidebar {
+        width: $editChartSidebarWidth;
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100%;
+        padding-top: $editHeaderHeight;
+        z-index: 8;
+    }
+}

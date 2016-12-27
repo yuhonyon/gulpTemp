@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>首页</title>
+    <!-- 公共 -->
+    @@include('./include/head.html')
+    <!-- 公共end -->
+
+</head>
+
+<body>
+    <div class="up-container-full edit edit-data-wrapper">
+        <div class="edit-header">
+            <div class="fl">
+                <h3><i class="icon-u-home"></i>添加数据</h3></div>
+            <div class="fr">
+                <i class="icon-u-home"></i>
+            </div>
+        </div>
+        <!-- 侧栏 -->
+        @@include('./include/editDataSidebar.html')
+        <script>
+        var setting = {
+            diySetting: {
+                accordion: false
+            },
+            diyClass: {
+                nodeDir: "icon-gr-folder",
+                nodeOpenDir: "icon-gr-wenjianjia",
+            }
+        };
+        var zNodes = [{
+            name: '9月成绩表',
+            open: true,
+            extend: "<a class='ztree-right-icon icon-gr-sandianshu'></a>",
+            children: [{
+                name: '产品表',
+            }, {
+                name: '产品表',
+            }, {
+                name: '产品表',
+            }, {
+                name: '产品表',
+            }, {
+                name: '产品表',
+            }, {
+                name: '类型表',
+            }]
+        }, {
+            name: '市场行情调查',
+            children: [{
+                name: '产品表',
+            }, {
+                name: '类型表',
+            }]
+        }];
+
+        $("#example-tree1").ztreeSidebar(zNodes, setting);
+        </script>
+        <!-- 侧栏 end -->
+        <div class="edit-data-main">
+   
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+(function() {
+
+
+
+}());
+</script>
+
+</html>

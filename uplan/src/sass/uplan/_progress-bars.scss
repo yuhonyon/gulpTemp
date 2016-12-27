@@ -1,0 +1,87 @@
+//
+// Progress bars
+// --------------------------------------------------
+
+
+// Bar animations
+// -------------------------
+
+// WebKit
+@-webkit-keyframes progress-bar-stripes {
+  from  { background-position: 40px 0; }
+  to    { background-position: 0 0; }
+}
+
+// Spec and IE10+
+@keyframes progress-bar-stripes {
+  from  { background-position: 40px 0; }
+  to    { background-position: 0 0; }
+}
+
+
+// Bar itself
+// -------------------------
+
+// Outer container
+.up-progress {
+  overflow: hidden;
+  height: $line-height-computed;
+  margin-bottom: $line-height-computed;
+  background-color: $progress-bg;
+  border-radius: $progress-border-radius;
+  @include box-shadow(inset 0 1px 2px rgba(0,0,0,.1));
+}
+
+// Bar of progress
+.up-progress-bar {
+  float: left;
+  width: 0%;
+  height: 100%;
+  font-size: $font-size-small;
+  line-height: $line-height-computed;
+  color: $progress-bar-color;
+  text-align: center;
+  background-color: $progress-bar-bg;
+  @include box-shadow(inset 0 -1px 0 rgba(0,0,0,.15));
+  @include transition(width .6s ease);
+}
+
+// Striped bars
+//
+// `.up-progress-striped .up-progress-bar` is deprecated as of v3.2.0 in favor of the
+// `.up-progress-bar-striped` class, which you just add to an existing
+// `.up-progress-bar`.
+.up-progress-striped .up-progress-bar,
+.up-progress-bar-striped {
+  @include gradient-striped;
+  background-size: 40px 40px;
+}
+
+// Call animation for the active one
+//
+// `.up-progress.up-active .up-progress-bar` is deprecated as of v3.2.0 in favor of the
+// `.up-progress-bar.up-active` approach.
+.up-progress.up-active .up-progress-bar,
+.up-progress-bar.up-active {
+  @include animation(progress-bar-stripes 2s linear infinite);
+}
+
+
+// Variations
+// -------------------------
+
+.up-progress-bar-success {
+  @include progress-bar-variant($progress-bar-success-bg);
+}
+
+.up-progress-bar-info {
+  @include progress-bar-variant($progress-bar-info-bg);
+}
+
+.up-progress-bar-warning {
+  @include progress-bar-variant($progress-bar-warning-bg);
+}
+
+.up-progress-bar-danger {
+  @include progress-bar-variant($progress-bar-danger-bg);
+}

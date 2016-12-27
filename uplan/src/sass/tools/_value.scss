@@ -1,0 +1,74 @@
+
+$cp:#317deb; //主调色
+$ci:#4daaf7; //信息色
+$cd:#ff0101; //危险色
+$cw:#ecb329; //警告色
+$cs:#087001; //成功色
+
+
+$bg:#fff; //背景色
+$fc:#666 ; //正文颜色  
+$bc:#dfdfdf; //border 颜色 
+$fz:12px; //正文字体尺寸 
+
+
+$fcq:#999;//浅色字颜色
+$fcs:#333;//深色字颜色
+
+$iconfontName:"gerenshujuzhongxin";
+$iconfontFileName:"griconfont";
+$iconfontClassName:"icon-gr-";
+
+
+$headerHeight:55px;
+
+$minWidth:1200px;
+$sidebarWidth:215px;
+
+
+
+
+//bootstrap 主调
+$brand-primary:         $cp;
+$brand-success:         $cs;
+$brand-info:            $ci;
+$brand-warning:         $cw;
+$brand-danger:          $cd;
+
+
+$navbar-height:                    $headerHeight;
+$navbar-margin-bottom:             0;
+$navbar-border-radius:             0;
+$navbar-collapse-max-height:       340px;
+$navbar-default-color:             #fff;
+$navbar-default-bg:                $cp;
+$navbar-default-border:            $cp;
+$navbar-default-link-color:                #fff;
+$navbar-default-link-hover-color:          #fff;
+$navbar-default-link-hover-bg:             darken($navbar-default-bg, 10%);
+$navbar-default-link-active-color:         #fff;
+$navbar-default-link-active-bg:            darken($navbar-default-bg, 10%);
+$navbar-default-toggle-hover-bg:           darken($navbar-default-bg, 10%);
+$navbar-default-toggle-icon-bar-bg:        #fff;
+$navbar-default-toggle-border-color:       #ddd;
+
+
+$grid-columns:24;
+
+
+
+$table-bg:                      #fff ;
+$table-bg-active:              #f9fafc;
+$table-border-color:            #eee ;
+
+
+$modal-title-padding:0 20px;
+$modal-title-line-height:40px;
+$modal-inner-padding:10px 15px;
+
+
+$icon-font-path:"../fonts/";
+
+
+
+$dropdown-link-hover-bg:#e3e9f2;

@@ -1,0 +1,19 @@
+.sidebar{
+    border-right: 1px solid $bc;
+    height: 100%;
+    .sidebar-header{
+        height: 42px;
+        line-height: 42px;
+        padding: 0 15px;
+        border-bottom: 1px solid $bc;
+        >h5{
+            float: left;
+            color: $fcq;
+            line-height: 42px;
+        }
+        >a{
+            float: right;
+            color: inherit;
+        }
+    }
+}

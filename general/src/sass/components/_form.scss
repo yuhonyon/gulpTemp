@@ -1,0 +1,163 @@
+$label-em:7em;
+.form {
+    .form-textmiddle {
+        padding-top: 7px;
+    }
+    .form-icon {
+        position: absolute;
+        right: 10px;
+        top: 7px;
+        z-index: 2;
+    }
+    .form-state-icon:before{
+            position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    }
+    .form-group {
+        position: relative;
+        >div {
+            position: relative;
+        }
+    }
+    .form-grolg .form-icon {
+        top: 12px;
+    }
+    .form-grosm .form-icon {
+        top: 5px;
+    }
+    .search-input {
+        position: relative;
+    }
+    .form-group.has-error label,
+    .form-group.has-warning label,
+    .form-group.has-success label {
+        color: inherit;
+    }
+    .has-warning {
+        .form-icon,
+        .form-remind {
+            color: $cw;
+        }
+        .form-state-icon {
+            &:before {
+                content: "\e101"
+            }
+        }
+        .form-control {
+            border-color: $cw;
+        }
+    }
+    .has-error {
+        .form-icon,
+        .form-remind {
+            color: $cd;
+        }
+        .form-state-icon {
+            &:before {
+                content: "\e083";
+            }
+        }
+        .form-control {
+            border-color: $cd;
+        }
+    }
+    .has-success {
+        .form-icon,
+        .form-remind {
+            color: $cs;
+        }
+        .form-state-icon {
+            &:before {
+                content: "\e084";
+            }
+        }
+        .form-control {
+            border-color: $cs;
+        }
+    }
+    .form-remind {
+        position: absolute;
+        top: 7px;
+        right: 30px;
+    }
+    .form-group {
+        >[class*='col'] {
+            padding-right: 0;
+            padding-left: 0;
+            position: relative;
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .form-inline {
+        .form-group {
+            position: relative;
+            >div {
+                position: relative;
+                display: inline-table;
+            }
+        }
+    }
+    .form {
+        @include clearfix();
+        .form-group {
+            margin-left: 0;
+            margin-right: 0;
+            padding-left: $label-em + 2em;
+            position: relative;
+            @include clearfix();
+            >.control-label {
+                padding-left: 0;
+                padding-right: 0;
+                white-space: nowrap;
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: $label-em + 2em;
+                padding-right: 1em;
+                text-align: right;
+                margin-bottom: 0;
+                padding-top: 7px;
+            }
+            &.form-grolg {
+                >.control-label {
+                    padding-top: 12px;
+                }
+            }
+            &.form-grosm {
+                >.control-label {
+                    padding-top: 5px;
+                }
+            }
+        }
+        .help-block {
+            margin-bottom: 0;
+        }
+    }
+    @for $i from 2 through 10 {
+        .form.form-#{$i}em .form-group>.control-label {
+            width: #{$i + 2}em;
+        }
+        .form-#{$i}em.tools,
+        .form.form-#{$i}em .form-group {
+            padding-left: #{$i + 2}em;
+        }
+    }
+    .form.form-block .form-group>.control-label {
+        width: 0;
+    }
+    .form.form-block .form-group {
+        padding-left: 0;
+    }
+    .form-icon {
+        right: 10px;
+    }
+}

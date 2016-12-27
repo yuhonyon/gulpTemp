@@ -1,0 +1,55 @@
+.up-panel-box {
+    padding: 0 8px;
+}
+
+.up-panel-wrapper {
+    margin-left: -8px;
+    margin-right: -8px;
+}
+
+.up-panel {
+    margin-bottom: 16px;
+    border-color: $bc;
+    .up-panel-heading {
+        background: #fff;
+        color: $fc;
+        padding: 0 15px;
+        height: 40px;
+
+        @include clearfix();
+        .up-panel-title {
+            float: left;
+            line-height: 40px;
+            color: $fcs;
+            font-size: 14px;
+        }
+
+        .up-panel-menu {
+            position: relative;
+            float: right;
+            line-height: 40px;
+            display: none;
+            >a {
+                color: $fcq;
+                position: relative;
+                font-size: 16px;
+                margin: 0 3px;
+                &:hover {
+                    color: $fcs;
+                }
+            }
+            >.up-dropdown-menu {
+                left: auto;
+                right: 0;
+                top: 100%;
+                min-width: 120px;
+            }
+        }
+    }
+    .up-panel-body{
+        @include clearfix();
+    }
+    &:hover .up-panel-heading>.up-panel-menu {
+        display: block;
+    }
+}

@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>首页</title>
+    <!-- 公共 -->
+    @@include('./include/head.html')
+    <!-- 公共end -->
+    <script src="js/echarts.min.js"></script>
+    <script src="js/allchart.min.js"></script>
+    <script src="plugIn/sortable/sortable.jquery.min.js"></script>
+    <script type="text/javascript" src="plugIn/swiper/idangerous.swiper2.7.6.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="plugIn/handsontable/handsontable.full.min.css">
+    <script src="plugIn/handsontable/handsontable.full.min.js"></script>
+    <!-- 修个了源码360行 -->
+</head>
+
+<body>
+    <div class="up-container-full edit-chart-wrapper">
+        <div class="edit-header">
+            <div class="fl">
+                <h3><i class="icon-u-home"></i>编辑图表</h3></div>
+            <div class="fr">
+                <button class="up-btn up-btn-default up-btn-sm">预览</button>
+                <button class="up-btn up-btn-default up-btn-sm">预览</button>
+                <button class="up-btn up-btn-default up-btn-sm">预览</button>
+            </div>
+        </div>
+        <div class="edit-chart-main">
+            <div class="edit-chart">
+                <div class="demochart" id="demochart1"></div>
+            </div>
+            <div class="edit-chart-slider">
+                <div class="swiper-btn swiper-prev"><i class="icon-gr-jiantou-copy"></i></div>
+                <div class="swiper-btn swiper-next"><i class="icon-gr-jiantou"></i></div>
+                <div class="swiper-container edit-slider">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="edit-chart-list"><img src="images/chart.jpg"></div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="edit-chart-list"><img src="images/chart.jpg"></div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="edit-chart-list"><img src="images/chart.jpg"></div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="edit-chart-list"><img src="images/chart.jpg"></div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="edit-chart-list"><img src="images/chart.jpg"></div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="edit-chart-list"><img src="images/chart.jpg"></div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="edit-chart-list"><img src="images/chart.jpg"></div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="edit-chart-list"><img src="images/chart.jpg"></div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="edit-chart-list"><img src="images/chart.jpg"></div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="edit-chart-list"><img src="images/chart.jpg"></div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="edit-chart-list"><img src="images/chart.jpg"></div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="edit-chart-list"><img src="images/chart.jpg"></div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="edit-chart-list"><img src="images/chart.jpg"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="edit-chart-sidebar">
+            <ul class="tab-nav">
+                <li class="active" data-tab="#edit-chart-tab1">基础设置</li>
+                <li data-tab="#edit-tab2">数据设置</li>
+            </ul>
+            <div class="tab-wrapper">
+                <div class="tab-body scroll active" id="edit-chart-tab1">
+                    <div class="edit-chart-data">
+                        <div class="edit-chart-data-label">名称</div>
+                        <div class="edit-chart-data-content">
+                            <input type="" name="">
+                        </div>
+                    </div>
+                    <div class="edit-chart-data">
+                        <div class="edit-chart-data-label">名称</div>
+                        <div class="edit-chart-data-content">
+                            <select>
+                                <option>1212121212</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="edit-chart-data">
+                        <div class="edit-chart-data-label">名称</div>
+                        <div class="edit-chart-data-content dragGroup">
+                            <a class="edit-chart-label">经度(生产2)</a>
+                        </div>
+                    </div>
+                    <div class="edit-chart-data">
+                        <div class="edit-chart-data-label">名称</div>
+                        <div class="edit-chart-data-content dragGroup">
+                            <a class="edit-chart-label">经度(生产3)</a>
+                            <a class="edit-chart-label">经度(生产1)</a>
+                        </div>
+                    </div>
+                    <div class="edit-chart-data">
+                        <div class="edit-chart-data-label">名称</div>
+                        <div class="edit-chart-data-content dragTreeGroup">
+                            <ul id="edit-chart-data-tree" class="edit-chart-tree"></ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-body scroll" id="edit-tab2">
+                    <div class="edit-chart-data">
+                        <div class="edit-chart-data-label">来源</div>
+                        <div class="edit-chart-data-content">
+                            <span class="edit-chart-data-text">学生成绩</span>
+                        </div>
+
+                        
+                    </div><div id="example-handson"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+(function() {
+
+
+    var data = function() {
+        return Handsontable.helper.createSpreadsheetData(50,7);
+    };
+
+
+
+    var container = document.getElementById('example-handson');
+
+    new Handsontable(container, {
+        data: data(),
+        minSpareCols: 1,
+        minSpareRows: 1,
+        rowHeaders: true,
+        colHeaders: true,
+        contextMenu: true
+    });
+
+
+    var mySwiper = new Swiper('.edit-slider', {
+        freeMode: true,
+        slidesPerView: 'auto',
+        freeModeFluid: true
+    })
+    $('.edit-chart-slider .swiper-perv').click(function() {
+        mySwiper.swipePrev();
+    })
+    $('.edit-chart-slider .swiper-next').click(function() {
+        mySwiper.swipeNext();
+    })
+
+    var setting = {
+        diySetting: {
+            accordion: false
+        },
+        diyClass: {
+            nodeDir: "icon-gr-jiantou",
+            nodeOpenDir: "icon-gr-jiantou-copy-copy",
+        }
+    };
+    var zNodes = [{
+        name: '9月成绩表',
+        open: true,
+        icon: "icon-gr-jingzibiaoqian",
+        children: [{
+            name: '产品表',
+            icon: "icon-gr-icon04"
+        }, {
+            name: '产品表',
+            icon: "icon-gr-icon04"
+        }, {
+            name: '产品表',
+            icon: "icon-gr-diqiu"
+        }, {
+            name: '产品表',
+            icon: "icon-gr-abc"
+        }, {
+            name: '产品表',
+            icon: "icon-gr-abc"
+        }, {
+            name: '类型表',
+            icon: "icon-gr-abc"
+        }]
+    }, {
+        name: '市场行情调查',
+        icon: "icon-gr-jingzibiaoqian",
+        open: true,
+        children: [{
+            name: '产品表',
+            icon: "icon-gr-fujian"
+        }, {
+            name: '类型表',
+            icon: "icon-gr-riqi"
+        }]
+    }, {
+        name: '市场行情调查',
+        icon: "icon-gr-jingzibiaoqian"
+    }, {
+        name: '市场行情调查',
+        icon: "icon-gr-jingzibiaoqian"
+    }, {
+        name: '市场行情调查',
+        icon: "icon-gr-jingzibiaoqian"
+    }, {
+        name: '市场行情调查',
+        icon: "icon-gr-jingzibiaoqian"
+    }, {
+        name: '市场行情调查',
+        icon: "icon-gr-jingzibiaoqian"
+    }, {
+        name: '市场行情调查',
+        icon: "icon-gr-jingzibiaoqian"
+    }, {
+        name: '市场行情调查',
+        icon: "icon-gr-jingzibiaoqian"
+    }, {
+        name: '市场行情调查',
+        icon: "icon-gr-jingzibiaoqian"
+    }];
+
+    $("#edit-chart-data-tree").ztreeSidebar(zNodes, setting);
+
+
+
+    $(".dragGroup").sortable({
+        group: {
+            'name': "label"
+        },
+        filter: ".ignore-elements",
+        draggable: "a",
+        ghostClass: "sortable-ghost",
+        chosenClass: "sortable-chosen",
+        dragClass: "sortable-drag",
+        dataIdAttr: 'data-id',
+        forceFallback: true
+
+    });
+
+    $(".dragTreeGroup li").sortable({
+        group: {
+            'name': "label",
+            'pull': 'clone',
+            'put': false
+        },
+        draggable: ".ztree-node",
+        ghostClass: "sortable-ghost",
+        chosenClass: "sortable-chosen",
+        dragClass: "sortable-drag",
+        dataIdAttr: 'data-id',
+        forceFallback: true,
+        onMove: function(e) {
+
+            $(e.dragged).addClass('repeat');
+            var $dragged = $(e.to).find("#" + e.dragged.id + ":not(.sortable-chosen)");
+            if ($dragged[0]) {
+                $dragged.addClass('repeat');
+                return false;
+            }
+        },
+        onEnd: function(e) {
+            $(".dragGroup .repeat").removeClass("repeat");
+        }
+
+    });
+
+
+}());
+</script>
+
+</html>

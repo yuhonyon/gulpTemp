@@ -1,0 +1,66 @@
+.up-media {
+  // Proper spacing between instances of .up-media
+  margin-top: 15px;
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+.up-media,
+.up-media-body {
+  zoom: 1;
+  overflow: hidden;
+}
+
+.up-media-body {
+  width: 10000px;
+}
+
+.up-media-object {
+  display: block;
+
+  // Fix collapse in webkit from max-width: 100% and display: table-cell.
+  &.up-imgthumbnail {
+    max-width: none;
+  }
+}
+
+.up-media-right,
+.up-media > .up-pull-right {
+  padding-left: 10px;
+}
+
+.up-media-left,
+.up-media > .up-pull-left {
+  padding-right: 10px;
+}
+
+.up-media-left,
+.up-media-right,
+.up-media-body {
+  display: table-cell;
+  vertical-align: top;
+}
+
+.up-media-middle {
+  vertical-align: middle;
+}
+
+.up-media-bottom {
+  vertical-align: bottom;
+}
+
+// Reset margins on headings for tighter default spacing
+.up-media-heading {
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+
+// Media list variation
+//
+// Undo default ul/ol styles
+.up-media-list {
+  padding-left: 0;
+  list-style: none;
+}

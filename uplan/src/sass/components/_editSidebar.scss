@@ -1,0 +1,89 @@
+.edit-chart-sidebar{
+    background: #f7f9fa;
+    position: relative;
+   box-shadow: -1px 0 5px 1px rgba(0,0,0,.1);
+    >.tab-nav{
+        position: relative;
+        z-index: 2;
+        height: 48px;
+        li {
+                height: 48px;
+                line-height: 48px;
+                float: left;
+                width: 50%;
+                background: #e7ebec;
+                border:0;
+                &.active{
+                    background: transparent;
+                    padding-top: 1px;
+                }
+                &:hover{
+                    color: inherit;
+                }
+            }
+    }
+    >.tab-wrapper{
+        position: absolute;
+        left: 0;
+        top:0;
+        width: 100%;
+        height: 100%;
+        padding-top:  (48px + 55px);
+        .tab-body{
+            height: 100%;
+            padding: 15px;
+        }
+    }
+
+    .edit-chart-data{
+        position: relative;
+        padding-left: 4em;
+        margin-bottom: 20px;
+        .edit-chart-data-label{
+            position: absolute;
+            left: 0;
+            top: 7px;
+            width: 3em;
+            text-align:right;
+            color: $fcq;
+        }
+        .edit-chart-data-content{
+            min-height: 28px;
+            position: relative;
+            @include clearfix();
+            width: 100%;
+            >input,>select{
+                height: 28px;
+                line-height: 28px;
+                border: 0;
+                background: transparent;
+                border-bottom: 1px solid $cp;
+                width: 100%;
+            }
+
+            .edit-chart-label,&.dragGroup .ztree-node{
+                padding: 3px 10px;
+                background: $cp;
+                color: #fff;
+                float: left;
+                cursor: pointer;
+                margin-right: 5px;
+                border-radius: 3px;
+                margin-top: 5px;
+                &.repeat{
+                background: #F5A107;
+            }
+            }
+
+            >ul{
+                margin-top: 7px;
+            }
+            .edit-chart-data-text{
+                line-height: 28px;
+            }
+         
+
+          
+        }
+    }
+}

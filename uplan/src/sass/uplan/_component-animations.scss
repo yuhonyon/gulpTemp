@@ -1,0 +1,37 @@
+//
+// Component animations
+// --------------------------------------------------
+
+// Heads up!
+//
+// We don't use the `.opacity()` mixin here since it causes a bug with text
+// fields in IE7-8. Source: https://github.com/twbs/uplan/pull/3552.
+
+.up-fade {
+  opacity: 0;
+  @include transition(opacity .15s linear);
+  &.up-in {
+    opacity: 1;
+  }
+}
+
+.up-collapse {
+  display: none;
+
+  &.up-in      { display: block; }
+  // [converter] extracted tr&.up-in to tr.up-collapse.up-in
+  // [converter] extracted tbody&.up-in to tbody.up-collapse.up-in
+}
+
+tr.up-collapse.up-in    { display: table-row; }
+
+tbody.up-collapse.up-in { display: table-row-group; }
+
+.up-collapsing {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  @include transition-property(height, visibility);
+  @include transition-duration(.35s);
+  @include transition-timing-function(ease);
+}

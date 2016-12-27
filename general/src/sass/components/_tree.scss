@@ -1,0 +1,125 @@
+$ztreeSidebar-btn-bg:#232f3a;
+$ztreeSidebar-btn-color:#fff;
+$ztreeSidebar-btn-height:32px;
+//背景色/图片
+$ztreeSidebar-bg: #293038!default;
+//宽
+$ztreeSidebar-width: 210px!default;
+//缩小的宽
+$ztreeSidebar-shrink-width:50px!default;
+//缩进
+$ztreeSidebar-retract:40px 40px 60px 80px 100px 120px !default;
+//行高
+$ztreeSidebar-node-height: 40px 34px 34px 34px 32px 32px!default;
+//字体大小
+$ztreeSidebar-node-size: 14px 12px 12px 12px 12px 12px !default;
+//线样式
+//颜色
+$ztreeSidebar-color: 
+('color': #666, 'color-hover': #333, 'color-open': #666, 'color-active': $cp, 'background': #fff, 'background-hover': #f5f5f5, background-open:#fff, 'background-active': #e3e9f2) 
+('color': #666, 'color-hover': #333, 'color-open': #666, 'color-active': $cp, 'background': #fff, 'background-hover': #f5f5f5, background-open:#fff, 'background-active': #e3e9f2) 
+('color': #666, 'color-hover': #333, 'color-open': #666, 'color-active': $cp, 'background': #fff, 'background-hover': #f5f5f5, background-open:#fff, 'background-active': #e3e9f2) 
+('color': #666, 'color-hover': #333, 'color-open': #666, 'color-active': $cp, 'background': #fff, 'background-hover': #f5f5f5, background-open:#fff, 'background-active': #e3e9f2) 
+('color': #666, 'color-hover': #333, 'color-open': #666, 'color-active': $cp, 'background': #fff, 'background-hover': #f5f5f5, background-open:#fff, 'background-active': #e3e9f2) 
+('color': #666, 'color-hover': #333, 'color-open': #666, 'color-active': $cp, 'background': #fff, 'background-hover': #f5f5f5, background-open:#fff, 'background-active': #e3e9f2);
+//横向变量------------------------
+//菜单宽度
+$ztreeSidebar-horizontal-width:180px;
+//缩进
+$ztreeSidebar-horizontal-shrink-width:20px;
+.ztree-sidebar {
+    @include clearfix();
+    &,
+    ul {
+        padding: 0;
+        list-style: none;
+    }
+    .ztree-parent,.ztree-node {
+        height: 30px;
+        display: block;
+        line-height: 30px;
+        padding-right: 10px;
+        position: relative;
+    }
+    .ztree-node {
+        cursor: pointer;
+    }
+    a:focus,
+    ul:focus,
+    li:focus {
+        outline: 0;
+    }
+    span.button.switch {
+        display: none;
+    }
+    .ztree-icon {
+        font-size: 1.2em;
+        position: relative;
+        top: 1px;
+        margin-right: 2px;
+    }
+    .ztree-right-icon{
+        color: inherit;
+        float: right;
+        cursor: pointer;
+    }
+    .ztree-switch {
+        position: absolute;
+        left: 10px;
+        font-size: 1.2em;
+    }
+    @for $i from 1 through length($ztreeSidebar-color) {
+        a.level#{$i - 1} {
+            height: nth($ztreeSidebar-node-height, $i);
+            line-height: nth($ztreeSidebar-node-height, $i);
+            background: map-get( nth($ztreeSidebar-color, $i), "background");
+            padding-left: nth($ztreeSidebar-retract, $i);
+            font-size: nth($ztreeSidebar-node-size, $i);
+            color: map-get( nth($ztreeSidebar-color, $i), "color");
+            &:focus {
+                color: map-get( nth($ztreeSidebar-color, $i), "color");
+            }
+            &:hover {
+                background: map-get( nth($ztreeSidebar-color, $i), "background-hover");
+                color: map-get( nth($ztreeSidebar-color, $i), "color-hover");
+                text-decoration: none;
+            }
+            &.ztree-node.curSelectedNode {
+                background: map-get( nth($ztreeSidebar-color, $i), "background-active");
+                color: map-get( nth($ztreeSidebar-color, $i), "color-active");
+            }
+            @at-root {
+                .center_open + a.level#{$i - 1}  {
+                    background: map-get( nth($ztreeSidebar-color, $i), "background-open");
+                    color: map-get( nth($ztreeSidebar-color, $i), "color-open");
+                }
+            }
+        }
+    }
+}
+
+.ztree-sidebar.ztree-sidebar-horizontal {
+    li.level0 {
+        float: left;
+        width: auto;
+        
+    }
+    li{
+        position: relative;
+    }
+    ul.level0 {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: $ztreeSidebar-horizontal-width;
+    }
+    ul {
+        position: absolute;
+        top: 0;
+        left: 100%;
+        width: $ztreeSidebar-horizontal-width;
+    }
+    a {
+        padding-left: $ztreeSidebar-horizontal-shrink-width;
+    }
+}

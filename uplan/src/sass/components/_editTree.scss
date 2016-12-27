@@ -1,0 +1,61 @@
+
+//缩进
+$editTree-retract: 30px 50px 70px 90px 120px !default;
+//行高
+$editTree-node-height: 24px 24px 24px 24px 24px 24px!default;
+//字体大小
+$editTree-node-size: 14px 12px 12px 12px 12px 12px !default;
+
+.edit-chart-tree {
+    @include clearfix();
+    &,
+    ul {
+        padding: 0;
+        list-style: none;
+    }
+    .ztree-parent,.ztree-node {
+        height: 30px;
+        display: block;
+        line-height: 30px;
+        padding-right: 10px;
+        position: relative;
+    }
+    .ztree-node {
+        cursor: pointer;
+    }
+    a:focus,
+    ul:focus,
+    li:focus {
+        outline: 0;
+    }
+    span.button.switch {
+        display: none;
+    }
+    .ztree-icon {
+        font-size: 1.2em;
+        position: relative;
+        top: 1px;
+        margin-right: 2px;
+    }
+    .node_name{
+        color: #333;
+    }
+
+    .ztree-switch {
+        position: absolute;
+        left: 10px;
+        font-size: .8em;
+        color: #333;
+    }
+    
+    @for $i from 1 through length($editTree-retract) {
+        a.level#{$i - 1} {
+            height: nth($editTree-node-height, $i);
+            line-height: nth($editTree-node-height, $i);
+            padding-left: nth($editTree-retract, $i);
+            font-size: nth($editTree-node-size, $i);
+        }
+    }
+}
+
+

@@ -1,0 +1,133 @@
+$pagination_font_size:12px;
+$pagination_font_color:#666;
+$pagination_active_font_color:#fff;
+$pagination_bg:#fff;
+$pagination_active_bg:$ci;
+$pagination_height:28px;
+$pagination_radius:2px;
+
+
+
+.pagination {
+    margin: 10px 0;
+    height: 38px;
+}
+
+.pagination-page,
+.pagination-info,
+.pagination-size,
+.pagination-jump {
+    float: left;
+    margin-top: 2px;
+    padding-right: 10px;
+    padding-left: 0;
+}
+
+
+.pagination-page > li > a,
+.pagination-size > select,
+.pagination-group > input,
+.pagination-group > button,
+.pagination-info {
+    font-size: $pagination_font_size;
+    color: $pagination_font_color;
+}
+
+
+/* border */
+
+.pagination-page > li > a,
+.pagination-size > select,
+.pagination-group > input,
+.pagination-group > button {
+    outline: none;
+    @include user-select(none);
+    border: 1px solid #ddd;
+}
+
+
+/* button */
+
+.pagination-page > li > a,
+.pagination-group > button {
+    cursor: pointer;
+    background-color: $pagination_bg;
+}
+
+.pagination-page > li:hover > a,
+.pagination-group > button:hover {
+    background-color: darken($pagination_bg,5%);
+    border-color: #ddd;
+}
+
+.pagination-page {
+    >li {
+        list-style: none;
+        float: left;
+        >a {
+            height: $pagination_height;
+            line-height: $pagination_height;
+            min-width: $pagination_height;
+            text-align: center;
+            margin-left: -1px;
+            display: inline-block;
+            padding: 0 6px;
+            text-decoration: none;
+        }
+        &.active >a{
+            color: #fff;
+            background-color: $pagination_active_bg;
+            border-color: $pagination_active_bg;
+        }
+        &:first-child > a {
+            margin-left: 0;
+            border-top-left-radius: $pagination_radius;
+            border-bottom-left-radius: $pagination_radius;
+        }
+        &:last-child > a {
+            border-top-right-radius: $pagination_radius;
+            border-bottom-right-radius: $pagination_radius;
+        }
+    }
+}
+
+
+
+
+.pagination-size > select {
+    cursor: pointer;
+    height: $pagination_height;
+    padding: 0px 2px;
+    border-radius: $pagination_radius;
+}
+
+
+
+
+.pagination-group {
+    >input,
+    >button {
+        float: left;
+    }
+    > input {
+        border-top-left-radius: $pagination_radius;
+        border-bottom-left-radius: $pagination_radius;
+        width: 40px;
+        height: $pagination_height;
+        padding: 0px;
+        text-align: center;
+    }
+    > button {
+        border-left: none;
+        border-top-right-radius: $pagination_radius;
+        border-bottom-right-radius: $pagination_radius;
+        height: $pagination_height;
+        padding: 0px 7px;
+    }
+
+}
+
+    .pagination-info {
+        height: $pagination_height;
+        line-height: $pagination_height;
+    }
